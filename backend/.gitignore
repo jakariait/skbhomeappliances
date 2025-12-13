@@ -136,4 +136,4 @@ dist
 .pnp.*
 
 # Ignore Uploads Folder
-./uploads
+uploads/
