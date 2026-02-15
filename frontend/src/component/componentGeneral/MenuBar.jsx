@@ -38,8 +38,8 @@ const MenuBar = () => {
 
   return (
     <div className="lg:shadow lg:bg-white">
-      <nav className="p-3 xl:container xl:mx-auto">
-        <ul className="lg:flex space-x-3">
+      <nav className="p-2 xl:container xl:mx-auto">
+        <ul className="lg:flex lg:justify-start lg:gap-x-2">
           <MenuItem
             label={
               <Link to="/" className="block">
@@ -76,7 +76,7 @@ const MenuBar = () => {
                     label={
                       <Link
                         to={categoryPath}
-                        className="grid grid-cols-2 gap-1 items-center justify-center w-full text-left"
+                        className="flex gap-1 items-center justify-center w-full text-left"
                         onClick={(e) => {
                           // Prevent navigation if already on this category
                           if (isCurrentRoute(categoryQuery)) {
@@ -194,7 +194,7 @@ const MenuItem = memo(({ label, children }) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <div className="px-4 py-2 text-gray-800 font-semibold cursor-pointer">
+      <div className="px-2 py-1 text-gray-800 font-semibold cursor-pointer">
         {label}
       </div>
 
@@ -241,10 +241,10 @@ const SubMenu = memo(
             const subCategoryPath = `/shop?${subCategoryQuery}`;
 
             return (
-              <li key={subCategory._id} className="px-4 py-2">
+              <li key={subCategory._id} className="px-2 py-1">
                 <Link
                   to={subCategoryPath}
-                  className="block w-full text-left hover:bg-gray-100 p-1 rounded transition-colors duration-150"
+                  className="block  text-left hover:bg-gray-100 p-1 rounded transition-colors duration-150"
                   onClick={(e) => {
                     if (isCurrentRoute && isCurrentRoute(subCategoryQuery)) {
                       e.preventDefault();
@@ -303,7 +303,7 @@ const ChildSubMenu = memo(
             const childCategoryPath = `/shop?${childCategoryQuery}`;
 
             return (
-              <li key={childCategory._id} className="px-4 py-2">
+              <li key={childCategory._id} className="px-2 py-1">
                 <Link
                   to={childCategoryPath}
                   className="text-left w-full hover:bg-gray-100 p-1 rounded text-sm block transition-colors duration-150"
